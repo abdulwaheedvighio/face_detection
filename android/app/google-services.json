@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "235978872185",
+    "project_id": "face-recognition-ea6fc",
+    "storage_bucket": "face-recognition-ea6fc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235978872185:android:3e7d8a8257bc00a72ccba8",
+        "android_client_info": {
+          "package_name": "com.innovatech_academy.face_recognition"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0LpdeTejNOfkqZCKLRsZ-ALHFpXDLQrM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
