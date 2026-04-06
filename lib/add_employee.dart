@@ -1,32 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'face_screen.dart';
 
 class AddEmployee extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
-
-  Future<void> addEmployee(String name) async {
-    List<double> embedding = List.generate(128, (i) => i * 0.02);
-
-    await FirebaseFirestore.instance.collection('employees').add({
-      'name': name,
-      'embedding': embedding,
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Add Employee")),
-      body: Column(
-        children: [
-          TextField(controller: nameController),
-          ElevatedButton(
-            onPressed: () {
-              addEmployee(nameController.text);
-            },
-            child: Text("Add"),
-          )
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            TextField(
+              controller: nameController,
+              decoration: InputDecoration(labelText: "Enter Name"),
+            ),
+
+            SizedBox(height: 20),
+
+            ElevatedButton(
+              onPressed: () {
+                if (nameController.text.isEmpty) return;
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => FaceScreen(
+                      userName: nameController.text,
+                      isRegister: true,
+                    ),
+                  ),
+                );
+              },
+              child: Text("Register Face"),
+            )
+          ],
+        ),
       ),
     );
   }
